@@ -28,3 +28,4 @@ Introducing caching service to reduce the number of API calls to github.
 A good option would be a [Redis](https://redis.com/) based caching service.
 - Add pagination support, since github api `/users/<USERNAME>/repos` endpoint 
 defaults to 30 repos per request and a maximum of 100. 
+- Additional test coverage to include (integration, specification) tests.

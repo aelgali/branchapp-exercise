@@ -1,5 +1,6 @@
 package com.branchapp.integration.config;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.reactive.function.client.WebClient;
@@ -8,8 +9,8 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class GithubClientConfig {
 
     @Bean
-    WebClient githubWebClient() {
+    WebClient githubWebClient(@Value("${github.api.url}") String githubApiUrl) {
         return  WebClient.builder()
-                .baseUrl("https://api.github.com").build();
+                .baseUrl(githubApiUrl).build();
     }
 }
